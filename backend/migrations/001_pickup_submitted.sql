@@ -1,0 +1,2 @@
+-- PostgreSQL: run once before deploying the updated API. Existing rows are preserved.
+-- ALTER TYPE pickupstatus ADD VALUE IF NOT EXISTS 'submitted';

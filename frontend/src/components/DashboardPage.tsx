@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
-import { getApiError, getBins, getPickupRequests, updateFillLevel } from "../api";
+import { getApiError, getBins, getPickupRequests } from "../api";
 import { useAuth } from "../auth";
 import BinCard from "./BinCard";
 import type { Bin, PickupRequest, PickupStatus } from "../types";
@@ -9,16 +9,18 @@ const STATUS_LABELS: Record<PickupStatus, string> = {
   requested: "Awaiting assignment",
   assigned: "Assigned",
   accepted: "In progress",
+  submitted: "Awaiting approval",
   completed: "Completed",
   cancelled: "Cancelled",
 };
 
 const STATUS_COLORS: Record<PickupStatus, string> = {
-  requested: "#d48b21",
-  assigned: "#4878b8",
-  accepted: "#875eb3",
-  completed: "#23835c",
-  cancelled: "#9aa69f",
+  requested: "#f5bd62",
+  assigned: "#60a5fa",
+  accepted: "#b49aff",
+  submitted: "#f5bd62",
+  completed: "#6ed7b5",
+  cancelled: "#9cacc4",
 };
 
 function Metric({ label, value, detail, tone = "green" }: { label: string; value: string | number; detail: string; tone?: string }) {
@@ -47,20 +49,11 @@ export default function DashboardPage() {
 
   useEffect(() => { void load(); }, [load]);
 
-  const handleFillLevelChange = async (id: number, fillLevel: number) => {
-    try {
-      const updated = await updateFillLevel(id, fillLevel);
-      setBins((current) => current.map((bin) => bin.id === id ? updated : bin));
-    } catch (cause) {
-      setError(getApiError(cause, "Could not update this bin."));
-      throw cause;
-    }
-  };
-
   const counts = useMemo(() => ({
     requested: requests.filter((item) => item.status === "requested").length,
     assigned: requests.filter((item) => item.status === "assigned").length,
     accepted: requests.filter((item) => item.status === "accepted").length,
+    submitted: requests.filter((item) => item.status === "submitted").length,
     completed: requests.filter((item) => item.status === "completed").length,
     cancelled: requests.filter((item) => item.status === "cancelled").length,
   }), [requests]);
@@ -128,9 +121,9 @@ export default function DashboardPage() {
           </article>
         </section>
 
-        {isAdmin && <section className="bin-overview"><div><p className="eyebrow">COLLECTION NETWORK</p><h2>Bin status</h2></div><div className="bin-overview-metrics"><span><strong>{bins.length}</strong> registered bins</span><span><strong>{averageFill}%</strong> average fill</span><span><strong>{bins.filter((bin) => bin.fill_level >= 80).length}</strong> at pickup threshold</span></div></section>}
+        {isAdmin && <section className="bin-overview"><div><p className="eyebrow">COLLECTION NETWORK</p><h2>Bin status</h2></div><div className="bin-overview-metrics"><span><strong>{bins.length}</strong> registered bins</span><span><strong>{averageFill}%</strong> average fill</span><span><strong>{bins.filter((bin) => bin.fill_level > 95).length}</strong> at pickup threshold</span></div></section>}
 
-        <section className="dashboard-bin-section"><div className="section-heading"><div><h2>Live bin network</h2><p>Collection status across monitored locations</p></div></div>{bins.length === 0 ? <p className="empty-state">No bins are registered yet.</p> : <div className="grid">{bins.map((bin) => <BinCard key={bin.id} bin={bin} canEdit={isAdmin} onFillLevelChange={handleFillLevelChange} />)}</div>}</section>
+        <section className="dashboard-bin-section"><div className="section-heading"><div><h2>Live bin network</h2><p>Fill calculated from approved deliveries. Bins above 95% enter the collection queue.</p></div></div>{bins.length === 0 ? <p className="empty-state">No bins are registered yet.</p> : <div className="grid">{bins.map((bin) => <BinCard key={bin.id} bin={bin} />)}</div>}</section>
 
         <section className="recent-section"><div className="section-heading"><div><h2>{isAdmin ? "Recent requests" : isDriver ? "Recent assigned tasks" : "Your recent requests"}</h2><p>Latest updates to pickup requests</p></div><Link className="text-link" to="/pickup-requests">View all</Link></div>
           {recent.length === 0 ? <p className="empty-state">No pickup requests yet. Use the requests page to get started.</p> : <div className="recent-list">{recent.map((item) => <article className="recent-item" key={item.id}><div className="recent-icon" aria-hidden="true">{item.status === "completed" ? "✓" : "↗"}</div><div className="recent-info"><strong>{item.waste_type} · {item.location}</strong><span>{isAdmin ? `${item.resident.name} · ` : ""}Pickup date ${new Date(`${item.requested_date}T12:00:00`).toLocaleDateString()}</span></div><span className={`request-status ${item.status}`}>{STATUS_LABELS[item.status]}</span></article>)}</div>}

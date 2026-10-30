@@ -17,7 +17,7 @@ router = APIRouter(
 
 admin_only = Depends(require_roles(UserRole.admin))
 
-PRIORITY_THRESHOLD = 80  # percent
+PRIORITY_THRESHOLD = 95  # percent; fill changes only through approved deliveries/collections
 
 
 @router.post("", response_model=BinOut, status_code=201, dependencies=[admin_only])
@@ -47,7 +47,7 @@ def list_bins(
 def priority_bins(db: Session = Depends(get_db)):
     query = (
         select(Bin)
-        .where(Bin.fill_level >= PRIORITY_THRESHOLD)
+        .where(Bin.fill_level > PRIORITY_THRESHOLD, Bin.status != BinStatus.maintenance)
         .order_by(Bin.fill_level.desc())
     )
     return db.scalars(query).all()
@@ -63,22 +63,23 @@ def get_bin(bin_id: int, db: Session = Depends(get_db)):
 
 @router.patch("/{bin_id}", response_model=BinOut, dependencies=[admin_only])
 def update_bin(bin_id: int, data: BinUpdate, db: Session = Depends(get_db)):
-    bin_ = db.get(Bin, bin_id)
+    bin_ = db.scalars(select(Bin).where(Bin.id == bin_id).with_for_update()).first()
     if not bin_:
         raise HTTPException(status_code=404, detail="Bin not found")
 
     changes = data.model_dump(exclude_unset=True)
+    if any(value is None for value in changes.values()):
+        raise HTTPException(status_code=422, detail="Bin fields cannot be null")
+    if "fill_level" in changes:
+        raise HTTPException(status_code=409, detail="Fill level is calculated from approved deliveries and collections")
+    if "capacity_liters" in changes and changes["capacity_liters"] != bin_.capacity_liters and bin_.fill_level > 0:
+        raise HTTPException(status_code=409, detail="Empty the bin before changing its capacity")
+    if changes.get("status") == BinStatus.full and bin_.fill_level < 100:
+        raise HTTPException(status_code=409, detail="Bins become full through approved deliveries")
+    if changes.get("status") == BinStatus.active and changes.get("fill_level", bin_.fill_level) >= 100:
+        raise HTTPException(status_code=409, detail="A full bin remains full until collection approval")
     for field, value in changes.items():
         setattr(bin_, field, value)
-
-    # Smart rule: if only the fill level was sent, update the status automatically
-    if "fill_level" in changes and "status" not in changes:
-        if bin_.status != BinStatus.maintenance:
-            bin_.status = (
-                BinStatus.full
-                if bin_.fill_level >= PRIORITY_THRESHOLD
-                else BinStatus.active
-            )
 
     db.commit()
     db.refresh(bin_)

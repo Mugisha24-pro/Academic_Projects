@@ -49,11 +49,6 @@ export async function getBins(): Promise<Bin[]> {
   return response.data;
 }
 
-export async function updateFillLevel(id: number, fillLevel: number): Promise<Bin> {
-  const response = await api.patch<Bin>(`/bins/${id}`, { fill_level: fillLevel });
-  return response.data;
-}
-
 export async function getRoutes(): Promise<CollectionRoute[]> {
   const response = await api.get<CollectionRoute[]>("/routes");
   return response.data;
@@ -143,4 +138,15 @@ export function getApiError(error: unknown, fallback: string): string {
     if (typeof detail === "string") return detail;
   }
   return fallback;
+}
+
+export async function approveRoute(id: number): Promise<CollectionRoute> {
+  return (await api.post<CollectionRoute>(`/routes/${id}/approve`)).data;
+}
+export async function approvePickupRequest(id: number): Promise<PickupRequest> {
+  return (await api.post<PickupRequest>(`/pickup-requests/${id}/approve`)).data;
+}
+
+export async function assignRoute(id: number, driverId: number): Promise<CollectionRoute> {
+  return (await api.patch<CollectionRoute>(`/routes/${id}`, { driver_id: driverId })).data;
 }

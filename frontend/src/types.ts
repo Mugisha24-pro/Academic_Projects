@@ -50,9 +50,12 @@ export interface CollectionRoute {
   stops: RouteStop[];
 }
 
-export type PickupStatus = "requested" | "assigned" | "accepted" | "completed" | "cancelled";
+export type PickupStatus = "requested" | "assigned" | "accepted" | "submitted" | "completed" | "cancelled";
 
 export interface PickupRequest {
+  destination_bin_id: number | null;
+  destination_bin: Bin | null;
+  waste_volume_liters: number | null;
   id: number;
   resident_id: number;
   resident: Pick<User, "id" | "name">;
@@ -68,6 +71,8 @@ export interface PickupRequest {
 }
 
 export interface PickupRequestInput {
+  destination_bin_id: number;
+  waste_volume_liters: number;
   location: string;
   waste_type: string;
   description: string;

@@ -146,6 +146,8 @@ class RouteOut(BaseModel):
 
 
 class PickupRequestCreate(BaseModel):
+    destination_bin_id: int = Field(gt=0)
+    waste_volume_liters: float = Field(gt=0, allow_inf_nan=False)
     location: str = Field(min_length=4, max_length=255)
     waste_type: str = Field(min_length=2, max_length=80)
     description: str = Field(min_length=5, max_length=2000)
@@ -153,6 +155,8 @@ class PickupRequestCreate(BaseModel):
 
 
 class PickupRequestUpdate(BaseModel):
+    destination_bin_id: int | None = Field(default=None, gt=0)
+    waste_volume_liters: float | None = Field(default=None, gt=0, allow_inf_nan=False)
     location: str | None = Field(default=None, min_length=4, max_length=255)
     waste_type: str | None = Field(default=None, min_length=2, max_length=80)
     description: str | None = Field(default=None, min_length=5, max_length=2000)
@@ -174,6 +178,9 @@ class PickupRequestOut(BaseModel):
     model_config = ConfigDict(from_attributes=True)
 
     id: int
+    destination_bin_id: int | None
+    destination_bin: BinOut | None
+    waste_volume_liters: float | None
     resident_id: int
     resident: PickupRequestPersonOut
     driver_id: int | None

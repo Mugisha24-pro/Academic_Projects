@@ -37,6 +37,7 @@ class PickupStatus(str, enum.Enum):
     requested = "requested"
     assigned = "assigned"
     accepted = "accepted"
+    submitted = "submitted"
     completed = "completed"
     cancelled = "cancelled"
 
@@ -124,6 +125,8 @@ class PickupRequest(Base):
     id: Mapped[int] = mapped_column(primary_key=True)
     resident_id: Mapped[int] = mapped_column(ForeignKey("users.id"), index=True)
     driver_id: Mapped[int | None] = mapped_column(ForeignKey("users.id"), nullable=True, index=True)
+    destination_bin_id: Mapped[int | None] = mapped_column(ForeignKey("bins.id"), nullable=True)
+    waste_volume_liters: Mapped[float | None] = mapped_column(Float, nullable=True)
     location: Mapped[str] = mapped_column(String(255))
     waste_type: Mapped[str] = mapped_column(String(80))
     description: Mapped[str] = mapped_column(Text)
@@ -135,4 +138,5 @@ class PickupRequest(Base):
     )
 
     resident: Mapped["User"] = relationship(foreign_keys=[resident_id])
+    destination_bin: Mapped["Bin | None"] = relationship(foreign_keys=[destination_bin_id])
     driver: Mapped["User | None"] = relationship(foreign_keys=[driver_id])

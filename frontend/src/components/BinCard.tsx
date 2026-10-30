@@ -1,31 +1,13 @@
-import { useState } from "react";
 import type { Bin } from "../types";
 
-interface BinCardProps {
-  bin: Bin;
-  canEdit: boolean;
-  onFillLevelChange: (id: number, fillLevel: number) => Promise<void>;
-}
-
 function levelClass(level: number): string {
-  if (level >= 80) return "high";
+  if (level > 95) return "high";
   if (level >= 50) return "medium";
   return "low";
 }
 
-export default function BinCard({ bin, canEdit, onFillLevelChange }: BinCardProps) {
-  const [draft, setDraft] = useState<number | null>(null);
-  const shown = draft ?? bin.fill_level;
-
-  const commit = async () => {
-    if (draft === null) return;
-    const value = draft;
-    try {
-      await onFillLevelChange(bin.id, value);
-    } finally {
-      setDraft(null);
-    }
-  };
+export default function BinCard({ bin }: { bin: Bin }) {
+  const shown = bin.fill_level;
 
   return (
     <article className={`card ${levelClass(shown)}`}>
@@ -49,20 +31,7 @@ export default function BinCard({ bin, canEdit, onFillLevelChange }: BinCardProp
         {bin.capacity_liters} L capacity · {bin.latitude.toFixed(4)}, {bin.longitude.toFixed(4)}
       </p>
 
-      {canEdit && (
-        <label className="simulate">
-          Adjust fill level
-          <input
-            type="range"
-            min={0}
-            max={100}
-            value={shown}
-            onChange={(e) => setDraft(Number(e.target.value))}
-            onPointerUp={commit}
-            onKeyUp={commit}
-          />
-        </label>
-      )}
+      <p className="field-hint">{bin.status === "maintenance" ? "Unavailable for deliveries" : shown > 95 ? "Ready for collection - awaiting driver and approval" : "Fill increases when waste deliveries are approved"}</p>
     </article>
   );
 }

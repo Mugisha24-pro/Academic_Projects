@@ -8,6 +8,7 @@ from app.database import get_db
 from app.deps import get_current_user
 from app.models import Bin, BinStatus, Route, RouteStatus, RouteStop, User, UserRole
 from app.schemas import RouteCreate, RouteOut, RouteUpdate
+from app.routers.bins import PRIORITY_THRESHOLD
 
 router = APIRouter(prefix="/routes", tags=["Routes"])
 
@@ -20,7 +21,7 @@ def _route_query():
 
 
 def _get_route(db: Session, route_id: int) -> Route:
-    route = db.scalars(_route_query().where(Route.id == route_id)).first()
+    route = db.scalars(_route_query().where(Route.id == route_id).with_for_update(of=Route)).first()
     if route is None:
         raise HTTPException(status_code=404, detail="Route not found")
     route.stops.sort(key=lambda stop: stop.stop_order)
@@ -40,12 +41,24 @@ def _validate_driver(db: Session, driver_id: int | None) -> None:
         raise HTTPException(status_code=422, detail="Choose an active driver account")
 
 
-def _make_stops(db: Session, bin_ids: list[int]) -> list[RouteStop]:
-    bins = db.scalars(select(Bin).where(Bin.id.in_(bin_ids))).all()
+def _make_stops(db: Session, bin_ids: list[int], route_id: int | None = None) -> list[RouteStop]:
+    if not bin_ids:
+        raise HTTPException(status_code=422, detail="Choose at least one full bin")
+    bins = db.scalars(select(Bin).where(Bin.id.in_(bin_ids)).order_by(Bin.id).with_for_update()).all()
     by_id = {bin_.id: bin_ for bin_ in bins}
     missing = [bin_id for bin_id in bin_ids if bin_id not in by_id]
     if missing:
         raise HTTPException(status_code=422, detail=f"Bin not found: {missing[0]}")
+    for bin_ in bins:
+        if bin_.status == BinStatus.maintenance or bin_.fill_level <= PRIORITY_THRESHOLD:
+            raise HTTPException(status_code=409, detail="Only bins above 95% qualify for collection")
+    occupied = select(RouteStop.id).join(Route).where(
+        RouteStop.bin_id.in_(bin_ids), Route.status != RouteStatus.completed
+    )
+    if route_id is not None:
+        occupied = occupied.where(Route.id != route_id)
+    if db.scalar(occupied.limit(1)) is not None:
+        raise HTTPException(status_code=409, detail="A selected bin already has an open collection task")
     return [
         RouteStop(bin=by_id[bin_id], stop_order=index)
         for index, bin_id in enumerate(bin_ids, start=1)
@@ -117,12 +130,15 @@ def update_route(
         raise HTTPException(status_code=409, detail="Only planned routes can be edited")
 
     changes = data.model_dump(exclude_unset=True)
+    if any(value is None for key, value in changes.items() if key != "driver_id"):
+        raise HTTPException(status_code=422, detail="Only driver_id can be null")
     if "driver_id" in changes:
         _validate_driver(db, changes["driver_id"])
     bin_ids = changes.pop("bin_ids", None)
     if bin_ids is not None:
+        stops = _make_stops(db, bin_ids, route.id)
         route.stops.clear()
-        route.stops.extend(_make_stops(db, bin_ids))
+        route.stops.extend(stops)
     for field, value in changes.items():
         if field == "name" and value is not None:
             value = value.strip()
@@ -138,9 +154,7 @@ def delete_route(
     current_user: User = Depends(get_current_user),
 ):
     _require_admin(current_user)
-    route = db.get(Route, route_id)
-    if route is None:
-        raise HTTPException(status_code=404, detail="Route not found")
+    route = _get_route(db, route_id)
     if route.status != RouteStatus.planned:
         raise HTTPException(status_code=409, detail="Only planned routes can be deleted")
     db.delete(route)
@@ -155,9 +169,7 @@ def collect_stop(
     current_user: User = Depends(get_current_user),
 ):
     route = _get_route(db, route_id)
-    if current_user.role != UserRole.admin and not (
-        current_user.role == UserRole.driver and route.driver_id == current_user.id
-    ):
+    if current_user.role != UserRole.driver or route.driver_id != current_user.id:
         raise HTTPException(status_code=403, detail="This route is not assigned to you")
     if route.status == RouteStatus.completed:
         raise HTTPException(status_code=409, detail="This route is already complete")
@@ -168,11 +180,30 @@ def collect_stop(
         raise HTTPException(status_code=409, detail="This stop is already collected")
 
     stop.collected_at = datetime.now(timezone.utc)
-    if stop.bin.status != BinStatus.maintenance:
-        stop.bin.fill_level = 0
-        stop.bin.status = BinStatus.active
     route.status = RouteStatus.in_progress
-    if all(item.collected_at is not None for item in route.stops):
-        route.status = RouteStatus.completed
     db.commit()
+    return _get_route(db, route.id)
+
+
+@router.post("/{route_id}/approve", response_model=RouteOut)
+def approve_route(
+    route_id: int,
+    db: Session = Depends(get_db),
+    current_user: User = Depends(get_current_user),
+):
+    _require_admin(current_user)
+    route = _get_route(db, route_id)
+    if route.status != RouteStatus.in_progress or not route.stops or any(
+        stop.collected_at is None for stop in route.stops
+    ):
+        raise HTTPException(status_code=409, detail="All stops must be submitted before approval")
+    bins = db.scalars(select(Bin).where(
+        Bin.id.in_([stop.bin_id for stop in route.stops])
+    ).order_by(Bin.id).with_for_update()).all()
+    for bin_ in bins:
+        bin_.fill_level = 0
+        if bin_.status != BinStatus.maintenance:
+            bin_.status = BinStatus.active
+    route.status = RouteStatus.completed
+    db.commit()  # Approval and emptying every bin are one transaction.
     return _get_route(db, route.id)
