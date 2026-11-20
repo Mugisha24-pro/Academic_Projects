@@ -1,0 +1,400 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\bazig\\source\\repos\\MarketPriceTracker\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B2E651EF-DE88-4A01-B543-5E75289CCF6E}|MarketPriceTracker.csproj|c:\\users\\bazig\\source\\repos\\marketpricetracker\\login.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B2E651EF-DE88-4A01-B543-5E75289CCF6E}|MarketPriceTracker.csproj|solutionrelative:login.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2E651EF-DE88-4A01-B543-5E75289CCF6E}|MarketPriceTracker.csproj|c:\\users\\bazig\\source\\repos\\marketpricetracker\\dashboard.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{B2E651EF-DE88-4A01-B543-5E75289CCF6E}|MarketPriceTracker.csproj|solutionrelative:dashboard.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2E651EF-DE88-4A01-B543-5E75289CCF6E}|MarketPriceTracker.csproj|c:\\users\\bazig\\source\\repos\\marketpricetracker\\dashboard.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B2E651EF-DE88-4A01-B543-5E75289CCF6E}|MarketPriceTracker.csproj|solutionrelative:dashboard.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2E651EF-DE88-4A01-B543-5E75289CCF6E}|MarketPriceTracker.csproj|c:\\users\\bazig\\source\\repos\\marketpricetracker\\site.master.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B2E651EF-DE88-4A01-B543-5E75289CCF6E}|MarketPriceTracker.csproj|solutionrelative:site.master.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2E651EF-DE88-4A01-B543-5E75289CCF6E}|MarketPriceTracker.csproj|c:\\users\\bazig\\source\\repos\\marketpricetracker\\site.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}",
+      "RelativeMoniker": "D:0:0:{B2E651EF-DE88-4A01-B543-5E75289CCF6E}|MarketPriceTracker.csproj|solutionrelative:site.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2E651EF-DE88-4A01-B543-5E75289CCF6E}|MarketPriceTracker.csproj|c:\\users\\bazig\\source\\repos\\marketpricetracker\\users.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B2E651EF-DE88-4A01-B543-5E75289CCF6E}|MarketPriceTracker.csproj|solutionrelative:users.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2E651EF-DE88-4A01-B543-5E75289CCF6E}|MarketPriceTracker.csproj|c:\\users\\bazig\\source\\repos\\marketpricetracker\\users.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{B2E651EF-DE88-4A01-B543-5E75289CCF6E}|MarketPriceTracker.csproj|solutionrelative:users.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2E651EF-DE88-4A01-B543-5E75289CCF6E}|MarketPriceTracker.csproj|c:\\users\\bazig\\source\\repos\\marketpricetracker\\profile.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B2E651EF-DE88-4A01-B543-5E75289CCF6E}|MarketPriceTracker.csproj|solutionrelative:profile.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2E651EF-DE88-4A01-B543-5E75289CCF6E}|MarketPriceTracker.csproj|c:\\users\\bazig\\source\\repos\\marketpricetracker\\profile.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{B2E651EF-DE88-4A01-B543-5E75289CCF6E}|MarketPriceTracker.csproj|solutionrelative:profile.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2E651EF-DE88-4A01-B543-5E75289CCF6E}|MarketPriceTracker.csproj|c:\\users\\bazig\\source\\repos\\marketpricetracker\\auth.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}",
+      "RelativeMoniker": "D:0:0:{B2E651EF-DE88-4A01-B543-5E75289CCF6E}|MarketPriceTracker.csproj|solutionrelative:auth.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2E651EF-DE88-4A01-B543-5E75289CCF6E}|MarketPriceTracker.csproj|c:\\users\\bazig\\source\\repos\\marketpricetracker\\compare.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{B2E651EF-DE88-4A01-B543-5E75289CCF6E}|MarketPriceTracker.csproj|solutionrelative:compare.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2E651EF-DE88-4A01-B543-5E75289CCF6E}|MarketPriceTracker.csproj|c:\\users\\bazig\\source\\repos\\marketpricetracker\\compare.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B2E651EF-DE88-4A01-B543-5E75289CCF6E}|MarketPriceTracker.csproj|solutionrelative:compare.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2E651EF-DE88-4A01-B543-5E75289CCF6E}|MarketPriceTracker.csproj|c:\\users\\bazig\\source\\repos\\marketpricetracker\\default.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B2E651EF-DE88-4A01-B543-5E75289CCF6E}|MarketPriceTracker.csproj|solutionrelative:default.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2E651EF-DE88-4A01-B543-5E75289CCF6E}|MarketPriceTracker.csproj|c:\\users\\bazig\\source\\repos\\marketpricetracker\\products.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{B2E651EF-DE88-4A01-B543-5E75289CCF6E}|MarketPriceTracker.csproj|solutionrelative:products.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2E651EF-DE88-4A01-B543-5E75289CCF6E}|MarketPriceTracker.csproj|c:\\users\\bazig\\source\\repos\\marketpricetracker\\products.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B2E651EF-DE88-4A01-B543-5E75289CCF6E}|MarketPriceTracker.csproj|solutionrelative:products.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2E651EF-DE88-4A01-B543-5E75289CCF6E}|MarketPriceTracker.csproj|c:\\users\\bazig\\source\\repos\\marketpricetracker\\reports.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{B2E651EF-DE88-4A01-B543-5E75289CCF6E}|MarketPriceTracker.csproj|solutionrelative:reports.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2E651EF-DE88-4A01-B543-5E75289CCF6E}|MarketPriceTracker.csproj|c:\\users\\bazig\\source\\repos\\marketpricetracker\\reports.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B2E651EF-DE88-4A01-B543-5E75289CCF6E}|MarketPriceTracker.csproj|solutionrelative:reports.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2E651EF-DE88-4A01-B543-5E75289CCF6E}|MarketPriceTracker.csproj|c:\\users\\bazig\\source\\repos\\marketpricetracker\\signup.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{B2E651EF-DE88-4A01-B543-5E75289CCF6E}|MarketPriceTracker.csproj|solutionrelative:signup.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2E651EF-DE88-4A01-B543-5E75289CCF6E}|MarketPriceTracker.csproj|c:\\users\\bazig\\source\\repos\\marketpricetracker\\login.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{B2E651EF-DE88-4A01-B543-5E75289CCF6E}|MarketPriceTracker.csproj|solutionrelative:login.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2E651EF-DE88-4A01-B543-5E75289CCF6E}|MarketPriceTracker.csproj|c:\\users\\bazig\\source\\repos\\marketpricetracker\\markets.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B2E651EF-DE88-4A01-B543-5E75289CCF6E}|MarketPriceTracker.csproj|solutionrelative:markets.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2E651EF-DE88-4A01-B543-5E75289CCF6E}|MarketPriceTracker.csproj|c:\\users\\bazig\\source\\repos\\marketpricetracker\\markets.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{B2E651EF-DE88-4A01-B543-5E75289CCF6E}|MarketPriceTracker.csproj|solutionrelative:markets.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2E651EF-DE88-4A01-B543-5E75289CCF6E}|MarketPriceTracker.csproj|c:\\users\\bazig\\source\\repos\\marketpricetracker\\signup.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B2E651EF-DE88-4A01-B543-5E75289CCF6E}|MarketPriceTracker.csproj|solutionrelative:signup.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Site.Master",
+              "DocumentMoniker": "C:\\Users\\bazig\\source\\repos\\MarketPriceTracker\\Site.Master",
+              "RelativeDocumentMoniker": "Site.Master",
+              "ToolTip": "C:\\Users\\bazig\\source\\repos\\MarketPriceTracker\\Site.Master",
+              "RelativeToolTip": "Site.Master",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2026-11-10T04:46:41.88Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Auth.Master",
+              "DocumentMoniker": "C:\\Users\\bazig\\source\\repos\\MarketPriceTracker\\Auth.Master",
+              "RelativeDocumentMoniker": "Auth.Master",
+              "ToolTip": "C:\\Users\\bazig\\source\\repos\\MarketPriceTracker\\Auth.Master",
+              "RelativeToolTip": "Auth.Master",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2026-11-10T05:58:29.696Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Dashboard.aspx",
+              "DocumentMoniker": "C:\\Users\\bazig\\source\\repos\\MarketPriceTracker\\Dashboard.aspx",
+              "RelativeDocumentMoniker": "Dashboard.aspx",
+              "ToolTip": "C:\\Users\\bazig\\source\\repos\\MarketPriceTracker\\Dashboard.aspx",
+              "RelativeToolTip": "Dashboard.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2026-11-10T07:34:50.906Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Login.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\bazig\\source\\repos\\MarketPriceTracker\\Login.aspx.cs",
+              "RelativeDocumentMoniker": "Login.aspx.cs",
+              "ToolTip": "C:\\Users\\bazig\\source\\repos\\MarketPriceTracker\\Login.aspx.cs",
+              "RelativeToolTip": "Login.aspx.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAACoAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-10T04:42:36.13Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Dashboard.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\bazig\\source\\repos\\MarketPriceTracker\\Dashboard.aspx.cs",
+              "RelativeDocumentMoniker": "Dashboard.aspx.cs",
+              "ToolTip": "C:\\Users\\bazig\\source\\repos\\MarketPriceTracker\\Dashboard.aspx.cs",
+              "RelativeToolTip": "Dashboard.aspx.cs",
+              "ViewState": "AgIAAIIAAAAAAAAAAAAkwGIAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-10T07:38:46.231Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Site.Master.cs",
+              "DocumentMoniker": "C:\\Users\\bazig\\source\\repos\\MarketPriceTracker\\Site.Master.cs",
+              "RelativeDocumentMoniker": "Site.Master.cs",
+              "ToolTip": "C:\\Users\\bazig\\source\\repos\\MarketPriceTracker\\Site.Master.cs",
+              "RelativeToolTip": "Site.Master.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABkAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-10T04:48:04.242Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Users.aspx",
+              "DocumentMoniker": "C:\\Users\\bazig\\source\\repos\\MarketPriceTracker\\Users.aspx",
+              "RelativeDocumentMoniker": "Users.aspx",
+              "ToolTip": "C:\\Users\\bazig\\source\\repos\\MarketPriceTracker\\Users.aspx",
+              "RelativeToolTip": "Users.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2026-11-10T05:44:17.136Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Users.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\bazig\\source\\repos\\MarketPriceTracker\\Users.aspx.cs",
+              "RelativeDocumentMoniker": "Users.aspx.cs",
+              "ToolTip": "C:\\Users\\bazig\\source\\repos\\MarketPriceTracker\\Users.aspx.cs",
+              "RelativeToolTip": "Users.aspx.cs",
+              "ViewState": "AgIAAIMAAAAAAAAAAAAAAJ8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-10T05:44:52.517Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Profile.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\bazig\\source\\repos\\MarketPriceTracker\\Profile.aspx.cs",
+              "RelativeDocumentMoniker": "Profile.aspx.cs",
+              "ToolTip": "C:\\Users\\bazig\\source\\repos\\MarketPriceTracker\\Profile.aspx.cs",
+              "RelativeToolTip": "Profile.aspx.cs",
+              "ViewState": "AgIAAGMAAAAAAAAAAAAIwHwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-10T07:19:56.327Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Profile.aspx",
+              "DocumentMoniker": "C:\\Users\\bazig\\source\\repos\\MarketPriceTracker\\Profile.aspx",
+              "RelativeDocumentMoniker": "Profile.aspx",
+              "ToolTip": "C:\\Users\\bazig\\source\\repos\\MarketPriceTracker\\Profile.aspx",
+              "RelativeToolTip": "Profile.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2026-11-10T07:17:50.385Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Compare.aspx",
+              "DocumentMoniker": "C:\\Users\\bazig\\source\\repos\\MarketPriceTracker\\Compare.aspx",
+              "RelativeDocumentMoniker": "Compare.aspx",
+              "ToolTip": "C:\\Users\\bazig\\source\\repos\\MarketPriceTracker\\Compare.aspx",
+              "RelativeToolTip": "Compare.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2026-11-10T07:05:55.237Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Compare.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\bazig\\source\\repos\\MarketPriceTracker\\Compare.aspx.cs",
+              "RelativeDocumentMoniker": "Compare.aspx.cs",
+              "ToolTip": "C:\\Users\\bazig\\source\\repos\\MarketPriceTracker\\Compare.aspx.cs",
+              "RelativeToolTip": "Compare.aspx.cs",
+              "ViewState": "AgIAAFUAAAAAAAAAAADwv3AAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-10T07:07:07.159Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Login.aspx",
+              "DocumentMoniker": "C:\\Users\\bazig\\source\\repos\\MarketPriceTracker\\Login.aspx",
+              "RelativeDocumentMoniker": "Login.aspx",
+              "ToolTip": "C:\\Users\\bazig\\source\\repos\\MarketPriceTracker\\Login.aspx",
+              "RelativeToolTip": "Login.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2026-11-10T04:41:52.572Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Default.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\bazig\\source\\repos\\MarketPriceTracker\\Default.aspx.cs",
+              "RelativeDocumentMoniker": "Default.aspx.cs",
+              "ToolTip": "C:\\Users\\bazig\\source\\repos\\MarketPriceTracker\\Default.aspx.cs",
+              "RelativeToolTip": "Default.aspx.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAABXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-10T05:49:56.616Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Signup.aspx",
+              "DocumentMoniker": "C:\\Users\\bazig\\source\\repos\\MarketPriceTracker\\Signup.aspx",
+              "RelativeDocumentMoniker": "Signup.aspx",
+              "ToolTip": "C:\\Users\\bazig\\source\\repos\\MarketPriceTracker\\Signup.aspx",
+              "RelativeToolTip": "Signup.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2026-11-10T04:32:19.295Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Reports.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\bazig\\source\\repos\\MarketPriceTracker\\Reports.aspx.cs",
+              "RelativeDocumentMoniker": "Reports.aspx.cs",
+              "ToolTip": "C:\\Users\\bazig\\source\\repos\\MarketPriceTracker\\Reports.aspx.cs",
+              "RelativeToolTip": "Reports.aspx.cs",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAtwEQAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-10T05:31:50.929Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Reports.aspx",
+              "DocumentMoniker": "C:\\Users\\bazig\\source\\repos\\MarketPriceTracker\\Reports.aspx",
+              "RelativeDocumentMoniker": "Reports.aspx",
+              "ToolTip": "C:\\Users\\bazig\\source\\repos\\MarketPriceTracker\\Reports.aspx",
+              "RelativeToolTip": "Reports.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2026-11-10T05:28:37.629Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Products.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\bazig\\source\\repos\\MarketPriceTracker\\Products.aspx.cs",
+              "RelativeDocumentMoniker": "Products.aspx.cs",
+              "ToolTip": "C:\\Users\\bazig\\source\\repos\\MarketPriceTracker\\Products.aspx.cs",
+              "RelativeToolTip": "Products.aspx.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-10T05:16:16.444Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Products.aspx",
+              "DocumentMoniker": "C:\\Users\\bazig\\source\\repos\\MarketPriceTracker\\Products.aspx",
+              "RelativeDocumentMoniker": "Products.aspx",
+              "ToolTip": "C:\\Users\\bazig\\source\\repos\\MarketPriceTracker\\Products.aspx",
+              "RelativeToolTip": "Products.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2026-11-10T05:15:39.308Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Markets.aspx",
+              "DocumentMoniker": "C:\\Users\\bazig\\source\\repos\\MarketPriceTracker\\Markets.aspx",
+              "RelativeDocumentMoniker": "Markets.aspx",
+              "ToolTip": "C:\\Users\\bazig\\source\\repos\\MarketPriceTracker\\Markets.aspx",
+              "RelativeToolTip": "Markets.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2026-11-10T04:57:20.164Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Markets.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\bazig\\source\\repos\\MarketPriceTracker\\Markets.aspx.cs",
+              "RelativeDocumentMoniker": "Markets.aspx.cs",
+              "ToolTip": "C:\\Users\\bazig\\source\\repos\\MarketPriceTracker\\Markets.aspx.cs",
+              "RelativeToolTip": "Markets.aspx.cs",
+              "ViewState": "AgIAAEwAAAAAAAAAAAAwwGsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-10T04:58:54.703Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Signup.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\bazig\\source\\repos\\MarketPriceTracker\\Signup.aspx.cs",
+              "RelativeDocumentMoniker": "Signup.aspx.cs",
+              "ToolTip": "C:\\Users\\bazig\\source\\repos\\MarketPriceTracker\\Signup.aspx.cs",
+              "RelativeToolTip": "Signup.aspx.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAABcAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-10T04:33:51.943Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
